@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-const Status = mongoose.Schema(
+const Priority = mongoose.Schema(
   {
     description: {
       type: String

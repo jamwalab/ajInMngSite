@@ -16,7 +16,7 @@ const Incident = mongoose.Schema(
   },
   priority: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Status'
+    ref: 'Priority'
   },
   createdOn: 
   {
