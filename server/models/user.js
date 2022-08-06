@@ -10,7 +10,8 @@ let User = mongoose.Schema
         {
             type: String,
             trim: true,
-            required: 'username is required'
+            required: 'username is required',
+            unique : true
         },
         
         password: 
@@ -25,7 +26,8 @@ let User = mongoose.Schema
        {
             type: String,
             trim: true,
-            required: 'email address is required'
+            required: 'email address is required',
+            unique : true
        },
        created: 
        {
@@ -54,5 +56,19 @@ let User = mongoose.Schema
 let options = ({ missingPasswordError: 'Wrong / Missing Password'});
 
 User.plugin(passportLocalMongoose, options);
+
+User.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// custom method to compare and validate password for logging in
+User.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
 
 module.exports.User = mongoose.model('User', User);
