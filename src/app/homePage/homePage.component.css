@@ -1,0 +1,60 @@
+.homeHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.heroRight, .heroLeft {
+  padding: 20px 60px;
+}
+
+.heroLeft {
+  border: 1px solid grey;
+  color: rgb(220, 220, 220);
+}
+
+.heroRight img {
+  max-height: 450px;
+}
+
+.heroHighlight {
+  font-size: 40px;
+}
+
+.heroDesc {
+  font-size: 24px;
+}
+
+.heroLeft button {
+  font-size: 24px;
+  padding: 10px;
+  background-color: rgb(52, 94, 144);
+  color: rgb(220, 220, 220);
+  box-shadow: 0 0 8px rgb(51, 51, 51);
+}
+
+.cardSection {
+  display: flex;
+  justify-content: center;
+}
+
+.cardSection .mat-card {
+  width: 300px;
+  margin: 20px 50px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
+  color: rgb(52, 94, 144);
+  font-size: 24px;
+}
+
+.cardSection img {
+  max-height: 200px;
+}
+
+.homeHeaders {
+  font-size: 42px;
+  text-align: center;
+  color: rgb(52, 94, 144);
+}
