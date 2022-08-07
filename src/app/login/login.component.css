@@ -1,20 +1,38 @@
 .example-container {
   display: flex;
   flex-direction: column;
+  font-size: 24px;
 }
 
 .example-container > * {
   width: 100%;
 }
 
-.example-container form {
-  margin-bottom: 20px;
+.loginSection {
+  max-width: 350px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10vh;
 }
 
-.example-container form > * {
-  margin: 5px 0;
+::ng-deep .mat-form-field-label {
+  color: rgb(52, 94, 144) !important;
 }
 
-.example-container .mat-radio-button {
-  margin: 0 12px;
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: black !important;
+  opacity: 1 !important;
+}
+
+.loginSection h2 {
+  font-size: 36px;
+  color: rgb(52, 94, 144);
+}
+
+.loginSection button {
+  color: rgb(220, 220, 220);
+  font-size: 22px;
+  background-color: rgb(52, 94, 144);
+  margin: 15px auto;
+  width: fit-content;
 }

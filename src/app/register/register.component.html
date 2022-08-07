@@ -1,1 +1,18 @@
-<h2>Register</h2>
+<section class="loginSection">
+  <h2>Create New Account</h2>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="registerData.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Username" [(ngModel)]="registerData.username">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Password" type="password" [(ngModel)]="registerData.password">
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary" (click)="onRegisterClick()">Register</button>
+  </div>
+</section>
