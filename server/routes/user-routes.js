@@ -73,6 +73,7 @@ router.post('/register', (req, res) => {
     // save the user
     User.create(newUser)
     .then(userData => {
+      console.log(userData);
       var token = jwt.sign(userData.toJSON(), DB.Secret);
       res.json({success: true, token: token, msg: 'Successful created new user.', user: userData});
     })

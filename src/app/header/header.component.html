@@ -7,5 +7,6 @@
   <span>Create</span>
   <span>Dasboard</span>
   <span class="menuSpacer">|</span>
-  <button mat-stroked-button color="primary" routerLink="/login">Login</button>
+  <button mat-stroked-button color="primary" *ngIf="!isLoogedIn()" routerLink="/login">Login</button>
+  <button mat-stroked-button color="primary" *ngIf="isLoogedIn()" (click)="onLogoutClick()">Logout</button>
 </mat-toolbar>

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
+import { HttpServiceService } from './http-service.service';
+import { AuthService } from './utils/auth';
 
 import { IncidentCreateComponent } from './incident/incident-create/incident-create.component';
 import { HeaderComponent } from './header/header.component';
@@ -43,7 +45,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HttpServiceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

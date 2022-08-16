@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+var cors = require('cors');
 
 // modules for authentication
 let session = require('express-session');
@@ -14,6 +15,7 @@ let localStrategy = passportLocal.Strategy;
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -77,9 +79,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Error'});
 });
 
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
