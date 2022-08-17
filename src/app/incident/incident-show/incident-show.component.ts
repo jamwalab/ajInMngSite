@@ -3,15 +3,24 @@ import { HttpServiceService } from '../../http-service.service';
 import { AuthService } from '../../utils/auth';
 
 @Component({
-  selector: 'app-create-incident',
-  templateUrl: './incident-create.component.html',
-  styleUrls: ['./incident-create.component.css']
+  selector: 'app-show-incident',
+  templateUrl: './incident-show.component.html',
+  styleUrls: ['./incident-show.component.css']
 })
 
-export class IncidentCreateComponent implements OnInit {
+export class IncidentShowComponent implements OnInit {
 
   constructor(private httpService: HttpServiceService, private auth: AuthService) {}
 
+  onOpenClick() {
+    const modalWrapper = document.getElementById("jw-modal-wrapper");
+    if (modalWrapper !== null) {
+      modalWrapper.classList.add("jw-modal-wrapper-open")
+      modalWrapper.classList.remove("jw-modal-wrapper-close")
+    }
+  }
+
+  /*
   onCloseClick() {
     const modalWrapper = document.getElementById("jw-modal-wrapper");
     if (modalWrapper !== null) {
@@ -19,6 +28,7 @@ export class IncidentCreateComponent implements OnInit {
       modalWrapper.classList.add("jw-modal-wrapper-close")
     }
   }
+  */
   ngOnInit() {
   }
 

@@ -1,1 +1,20 @@
-<h2>Checkkkk</h2>
+<article class="jw-modal-wrapper-close" id="jw-modal-wrapper">
+  <div class="jw-modal">
+    <div class="jw-modal-body">
+      <mat-form-field appearance="fill">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button (click)="onCloseClick()">Close</button>
+    </div>
+  </div>
+  <div class="jw-modal-background"></div>
+</article>

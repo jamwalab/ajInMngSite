@@ -11,12 +11,12 @@ const Incident = mongoose.Schema(
     required: true
   },
   status: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Status'
+    type: String,
+    required: true
   },
   priority: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Priority'
+    type: String,
+    required: true
   },
   createdOn: 
   {
