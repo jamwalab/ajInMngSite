@@ -19,4 +19,13 @@ export class HttpServiceService {
     return this.http.post(`${this.uri}/user/login`, userData);
   }
 
+  createIncident(incidentData:any) {
+    //console.log(incidentData);
+    return this.http.post(`${this.uri}/incident`, incidentData);
+  }
+
+  getAllIncident() {
+    return this.http.get(`${this.uri}/incident`);
+  }
+
 }

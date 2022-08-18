@@ -1,19 +1,25 @@
 <article class="jw-modal-wrapper-close" id="jw-modal-wrapper">
   <div class="jw-modal">
     <div class="jw-modal-body">
-      <mat-form-field appearance="fill">
-        <mat-label>Textarea</mat-label>
-        <textarea matInput></textarea>
+      <h3>Create New Incident</h3>
+      <mat-form-field>
+        <mat-label>Incident Description</mat-label>
+        <textarea matInput rows="8" [(ngModel)]="incidentData.description"></textarea>
       </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Select</mat-label>
-        <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="jw-modal-body-btnrow">
+        <mat-form-field class="modalPriority">
+          <mat-label>Priority</mat-label>
+          <mat-select (selectionChange)="changePriority($event.value)">
+            <mat-option *ngFor="let priority of allPriorities" [value]="priority">
+              {{priority}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button (click)="onSubmitIncident()">Submit</button>
+        <button (click)="onCloseClick()">Cancel</button>
+      </div>
 
-      <button (click)="onCloseClick()">Close</button>
+      
     </div>
   </div>
   <div class="jw-modal-background"></div>

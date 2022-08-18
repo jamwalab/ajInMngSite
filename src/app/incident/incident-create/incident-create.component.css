@@ -31,7 +31,7 @@
 
 .jw-modal-body {
   padding: 20px;
-  background: rgba(255, 255, 255, 0.623);
+  background: rgb(255, 255, 255);
 
   /* margin exposes part of the modal background */
   margin: 40px;
@@ -49,4 +49,49 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+::ng-deep .mat-form-field-label {
+  color: rgb(52, 94, 144) !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: black !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .mat-select-value-text{
+  color: #000;  
+}
+
+#jw-modal-wrapper h2 {
+  font-size: 36px;
+  color: rgb(52, 94, 144);
+}
+
+.jw-modal-body {
+  min-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+
+.jw-modal-body button {
+  color: rgb(220, 220, 220);
+  font-size: 28px;
+  background-color: rgb(52, 94, 144);
+  margin: 15px;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+
+.jw-modal-body-btnrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalPriority {
+  min-width: 350px;
 }
