@@ -35,6 +35,7 @@ export class IncidentCreateComponent implements OnInit {
       console.log(resData);
       this.onCloseClick();
     })
+    location.reload();
   }
 
   allPriorities: string[] = ['Low', 'Medium', 'High'];
@@ -44,6 +45,7 @@ export class IncidentCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

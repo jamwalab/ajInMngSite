@@ -1,0 +1,64 @@
+.arrangeHori {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachIncident {
+  margin: 40px 20px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  box-shadow: 0 0 2px black;
+}
+
+.cardDesc {
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.cardStatus {
+  color: rgb(52, 94, 144);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.ticketnum {
+  text-align: center;
+}
+
+.displayIncidents {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+::ng-deep .mat-form-field-label {
+  color: rgb(52, 94, 144) !important;
+}
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: black !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .mat-select-value-text{
+  color: #000;  
+}
+
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.commentBox button {
+  max-width: 100px;
+  padding: 5px;
+  font-size: 18px;
+  align-self: center;
+}
+
+.eachCommentData {
+  background-color: rgb(99, 99, 99);
+  margin: 20px;
+}

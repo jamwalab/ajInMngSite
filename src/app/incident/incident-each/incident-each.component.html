@@ -1,0 +1,32 @@
+<section class="displayIncidents">
+  <mat-card class="eachIncident">
+    <p class="ticketnum">{{oneIncident._id}}</p>
+    <p class="cardStatus">{{oneIncident.status}}</p>
+    <p class="cardDesc">{{oneIncident.description}}</p>
+    <div class="arrangeHori">
+      <p>Priority - {{oneIncident.priority}}</p>
+      <p>Comments - {{oneIncident.comments.length}}</p>
+    </div>
+    <div class="arrangeHori">
+      <p>Created by - {{oneIncident.createdBy}}</p>
+      <p>Created on - {{oneIncident.createdOn}}</p>
+    </div>
+  </mat-card>
+  <article *ngIf="oneIncident.comments.length === 0">
+    <p>No comments added!!</p>
+  </article>
+  <article *ngIf="oneIncident.comments.length > 0" >
+    <mat-card *ngFor="let comment of oneIncident.comments" class="eachCommentData">
+      <p>{{comment.commentText}}</p>
+      <p>{{comment.createdOn}}</p>
+    </mat-card>
+  </article>
+  <article class="commentBox">
+    <mat-form-field >
+      <mat-label>Add Comment</mat-label>
+      <textarea matInput rows="3" [(ngModel)]="commentData.commentText"></textarea>
+    </mat-form-field>
+    <button (click)="onSubmitComment()">Submit</button>
+  </article>
+
+</section>

@@ -6,10 +6,6 @@ const Comment = mongoose.Schema(
       type: String,
       required: 'Comment is required'
     },
-    createdBy: {
-      type: String,
-      required: true
-    },
     createdOn: 
     {
          type: Date,

@@ -6,7 +6,16 @@
     <p>Active</p>
     <p>Resolved</p>
   </article>
-  <article>
-    
-  </article>
+  <mat-card *ngFor="let incident of allIncidents" class="eachIncident" routerLink = "/incident/{{incident._id}}">
+    <p class="cardStatus">{{incident.status}}</p>
+    <p class="cardDesc">{{incident.description}}</p>
+    <div class="arrangeHori">
+      <p>Priority - {{incident.priority}}</p>
+      <p>Comments - {{incident.comments.length}}</p>
+    </div>
+    <div class="arrangeHori">
+      <p>Created by - {{incident.createdBy}}</p>
+      <p>Created on - {{incident.createdOn}}</p>
+    </div>
+  </mat-card>
 </section>

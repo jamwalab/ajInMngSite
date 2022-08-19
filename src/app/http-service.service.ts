@@ -28,4 +28,11 @@ export class HttpServiceService {
     return this.http.get(`${this.uri}/incident`);
   }
 
+  getOneIncident(incidentId:any) {
+    return this.http.get(`${this.uri}/incident/${incidentId}`);
+  }
+
+  addComment(commentData:any) {
+    return this.http.post(`${this.uri}/incident/addComment`, commentData);
+  }
 }

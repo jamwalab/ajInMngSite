@@ -5,7 +5,7 @@ import {LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {IncidentShowComponent} from './incident/incident-show/incident-show.component';
-import {IncidentCreateComponent} from './incident/incident-create/incident-create.component';
+import {IncidentEachComponent} from './incident/incident-each/incident-each.component';
 import { AuthService } from './utils/auth';
 
 
@@ -24,6 +24,10 @@ const routes: Routes = [
   { path: 'incident', component: (() => {
     const auth = new AuthService;
     return auth.loggedIn() ? IncidentShowComponent : LoginComponent;
+  })() },
+  { path: 'incident/:incidentId', component: (() => {
+    const auth = new AuthService;
+    return auth.loggedIn() ? IncidentEachComponent : LoginComponent;
   })() }
 ];
 

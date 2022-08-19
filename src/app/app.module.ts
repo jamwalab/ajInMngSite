@@ -8,6 +8,7 @@ import { AuthService } from './utils/auth';
 
 import { IncidentCreateComponent } from './incident/incident-create/incident-create.component';
 import { IncidentShowComponent } from './incident/incident-show/incident-show.component';
+import { IncidentEachComponent } from './incident/incident-each/incident-each.component';
 import { HeaderComponent } from './header/header.component';
 import {HomePageComponent} from './homePage/homePage.component';
 import {LoginComponent} from './login/login.component';
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     IncidentCreateComponent,
     IncidentShowComponent,
+    IncidentEachComponent,
     HeaderComponent,
     HomePageComponent,
     LoginComponent,
