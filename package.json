@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "cd server && npm start",
+    "start": "node server/server.js",
     "build": "ng build",
+    "install": "npm i && cd server && npm i",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "develop": "concurrently \"cd server && npm start\" \"ng serve\""
