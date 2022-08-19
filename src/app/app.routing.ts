@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'login', component: (() => {
     const auth = new AuthService;
-    return auth.loggedIn() ? DashboardComponent : LoginComponent;
+    return auth.loggedIn() ? IncidentShowComponent : LoginComponent;
   })() },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: (() => {
     const auth = new AuthService;
-    return auth.loggedIn() ? DashboardComponent : LoginComponent;
+    return auth.loggedIn() ? IncidentShowComponent : LoginComponent;
   })() },
   { path: 'incident', component: (() => {
     const auth = new AuthService;

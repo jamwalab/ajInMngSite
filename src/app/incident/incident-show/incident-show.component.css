@@ -5,6 +5,10 @@
   box-shadow: 0 0 2px black;
 }
 
+.eachIncident:hover {
+  cursor: pointer;
+}
+
 .displayIncidents {
   max-width: 1200px;
   margin: 0 auto;
@@ -25,4 +29,36 @@
   color: rgb(52, 94, 144);
   font-style: italic;
   font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.buttonPannel {
+  margin: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.buttonPannel button {
+  padding: 5px;
+  font-size: 18px;
+  background-color: #7aa9e6;
+  border-radius: 5px;
+}
+
+.buttonPannel button:hover {
+  cursor: pointer;
+}
+
+.buttonPannel span {
+  font-weight: bold;
+}
+
+.noCommentAdd {
+  text-align: center;
+  font-size: 24px;
 }

@@ -62,3 +62,18 @@
   background-color: rgb(99, 99, 99);
   margin: 20px;
 }
+
+.commentBox button {
+  padding: 5px 10px;
+  font-size: 18px;
+  background-color: #7aa9e6;
+  border-radius: 5px;
+}
+
+.commentBox button:hover {
+  cursor: pointer;
+}
+
+.noCommentAdd {
+  margin: 0 20px;
+}

@@ -20,7 +20,6 @@ export class HttpServiceService {
   }
 
   createIncident(incidentData:any) {
-    //console.log(incidentData);
     return this.http.post(`${this.uri}/incident`, incidentData);
   }
 

@@ -12,6 +12,7 @@ export class IncidentCreateComponent implements OnInit {
 
   incidentData = {description: '', createdBy: '', status: '', priority: '', userId: ''}
 
+  errorText: string = "";
   constructor(private httpService: HttpServiceService, private auth: AuthService) {}
 
   onCloseClick() {
@@ -24,15 +25,17 @@ export class IncidentCreateComponent implements OnInit {
 
   onSubmitIncident() {
     const userData:any = this.auth.getProfile();
-    //console.log(this.auth.getProfile());
 
     this.incidentData.createdBy = userData.username;
     this.incidentData.status = "New";
     this.incidentData.userId = userData._id;
-    //this.httpService.createIncident(this.incidentData);
+
+    if (this.incidentData.description === "" || this.incidentData.priority === "") {
+      this.errorText = "Missing required information!! Please try again!!"
+      return;
+    }
 
     this.httpService.createIncident(this.incidentData).subscribe((resData:any) => {
-      console.log(resData);
       this.onCloseClick();
     })
     location.reload();

@@ -5,7 +5,6 @@
   </a>
   <span class="example-spacer"></span>
   <span routerLink="/incident">Incident</span>
-  <span *ngIf="isLoogedIn()" routerLink="/dashboard">Dasboard</span>
   <span class="menuSpacer">|</span>
   <button mat-stroked-button color="primary" *ngIf="!isLoogedIn()" routerLink="/login">Login</button>
   <button mat-stroked-button color="primary" *ngIf="isLoogedIn()" (click)="onLogoutClick()">Logout</button>

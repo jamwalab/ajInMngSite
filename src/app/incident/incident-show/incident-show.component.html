@@ -1,13 +1,15 @@
 <section class="displayIncidents">
-  <h2>Incident</h2>
+  <h2>Showing All Incidents</h2>
   <app-create-incident></app-create-incident>
-  <article>
-    <button (click)="onOpenClick()">Open</button>
-    <p>Active</p>
-    <p>Resolved</p>
+  <article class="buttonPannel">
+    <button (click)="onOpenClick()">Open New Ticket</button>
+    <p>Welcome <span>{{curUser.username}}</span></p>
+  </article>
+  <article *ngIf="allIncidents.length === 0" class="noCommentAdd">
+    <p>No tickets added!!</p>
   </article>
   <mat-card *ngFor="let incident of allIncidents" class="eachIncident" routerLink = "/incident/{{incident._id}}">
-    <p class="cardStatus">{{incident.status}}</p>
+    <p class="cardStatus" *ngIf="checkStatus(incident.createdOn)">New</p>
     <p class="cardDesc">{{incident.description}}</p>
     <div class="arrangeHori">
       <p>Priority - {{incident.priority}}</p>

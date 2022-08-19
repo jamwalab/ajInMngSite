@@ -12,7 +12,7 @@
       <p>Created on - {{oneIncident.createdOn}}</p>
     </div>
   </mat-card>
-  <article *ngIf="oneIncident.comments.length === 0">
+  <article *ngIf="oneIncident.comments.length === 0" class="noCommentAdd">
     <p>No comments added!!</p>
   </article>
   <article *ngIf="oneIncident.comments.length > 0" >

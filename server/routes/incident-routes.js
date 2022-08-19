@@ -11,7 +11,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  console.log("ss", req.params.id)
   Incident.findOne({_id: req.params.id})
     .populate({
       path: 'comments',
@@ -44,7 +43,6 @@ router.post('/', (req, res, next) => {
         new: true
       },
       async function(err, user) {
-        //console.log(incidentData, user);
         if (err) throw err
         else if (!user) {
           res.status(401).send({success: false, msg: 'User was not found!!'});
@@ -53,7 +51,6 @@ router.post('/', (req, res, next) => {
           res.json({incidentData, user});
         }
       })
-      //res.json(newIncident);
     })
     .catch(err => {
       console.log(err);
@@ -64,8 +61,6 @@ router.post('/', (req, res, next) => {
 router.post('/addComment', (req, res, next) => {
   Comment.create({commentText : req.body.commentText})
   .then(commentData => {
-    console.log("aaaaaadad")
-    console.log(commentData)
     Incident.findByIdAndUpdate(
       req.body.incidentId,
       {

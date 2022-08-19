@@ -25,32 +25,16 @@ export class IncidentShowComponent implements OnInit {
   allIncidents: any = [];
 
   curFilter: string = "active"
-/*
-  getFilteredIncidents() : any[] {
 
-    return this.httpService.getAllIncident().pipe(map(element:any) => {
+  curUser: any;
 
-    })
-    /*let inci: any = []
-    this.httpService.getAllIncident().subscribe((resData:any) => {
-      inci = resData.filter((element:any) => {
-        if (this.curFilter === "active" && element.status !== "Closed") {
-          
-          return true;
-        }
-        else {
-          return false;
-        }
-      });
-      console.log(inci)
-    })
-    return inci;
-  }*/
+  checkStatus(date:any) {
+    console.log(date);
+    return Date.now() - Date.parse(date) < 10 * 60 * 60 * 1000;
+  }
 
   ngOnInit() {
-    //console.log(this.httpService.getAllIncident())
-    //this.allIncidents = this.getAllIncidents();
-    
+   
     this.httpService.getAllIncident().subscribe((resData:any) => {
       this.allIncidents = resData.filter((element:any) => {
         if (this.curFilter === "active" && element.status !== "Closed") {
@@ -59,12 +43,14 @@ export class IncidentShowComponent implements OnInit {
         else {
           return false;
         }
+      }).sort((a:any,b:any) => {
+        return Date.parse(b.createdOn) - Date.parse(a.createdOn);
       })
+
+      this.curUser = this.auth.getProfile();
       console.log(this.allIncidents);
     })
     
-    
-    //this.allIncidents = this.getFilteredIncidents();
   }
 
 }

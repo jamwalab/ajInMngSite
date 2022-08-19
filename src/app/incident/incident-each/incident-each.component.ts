@@ -31,14 +31,12 @@ export class IncidentEachComponent implements OnInit {
     let inciId: any;
     this.route.params
       .subscribe(params => {
-        console.log(params);
         inciId = params['incidentId'];
       }
     );
 
     this.httpService.getOneIncident(inciId).subscribe((resData:any) => {
       this.oneIncident = resData;
-      console.log( this.oneIncident);
     })
   }
 

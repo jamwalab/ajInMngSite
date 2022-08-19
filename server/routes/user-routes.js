@@ -34,8 +34,6 @@ router.post('/login', (req, res, next) => {
     if (!user) {
       res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
     } else {
-      // check if password matches
-      console.log(req.body.password, user)
       const correctPw = await user.isCorrectPassword(req.body.password);
 
       if (!correctPw) {
@@ -45,18 +43,6 @@ router.post('/login', (req, res, next) => {
         var token = jwt.sign(user.toJSON(), DB.Secret);
         res.json({success: true, token: token, user});
       }
-
-      /*
-      user.isCorrectPassword(req.body.password, function (err, isMatch) {
-        if (isMatch && !err) {
-          // if user is found and password is right create a token
-          var token = jwt.sign(user.toJSON(), DB.Secret);
-          // return the information including token as JSON
-          res.json({success: true, token: 'JWT ' + token, user});
-        } else {
-          res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
-        }
-      });*/
     }
   });
 });
@@ -73,7 +59,6 @@ router.post('/register', (req, res) => {
     // save the user
     User.create(newUser)
     .then(userData => {
-      console.log(userData);
       var token = jwt.sign(userData.toJSON(), DB.Secret);
       res.json({success: true, token: token, msg: 'Successful created new user.', user: userData});
     })

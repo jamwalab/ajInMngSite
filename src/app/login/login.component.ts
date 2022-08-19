@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private httpService: HttpServiceService, private auth: AuthService) {}
 
   onLoginClick() {
-    //console.log(this.loginData);
     this.httpService.loginUser(this.loginData).subscribe((userData:any) => {
-      //console.log(userData);
       const token = userData.token;
       this.auth.login(token);
     })

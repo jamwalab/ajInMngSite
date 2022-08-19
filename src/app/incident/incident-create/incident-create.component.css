@@ -95,3 +95,10 @@
 .modalPriority {
   min-width: 350px;
 }
+
+.displayErrorText {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  color: red;
+}

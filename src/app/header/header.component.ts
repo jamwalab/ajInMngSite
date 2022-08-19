@@ -11,7 +11,6 @@ export class HeaderComponent {
   constructor(private httpService: HttpServiceService, private auth: AuthService) {}
 
   onLogoutClick() {
-    //console.log(this.loginData);
     this.auth.logout();
   }
 
